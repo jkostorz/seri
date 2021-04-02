@@ -1,8 +1,9 @@
-# seri - SErial to Remote Interactive interface to control Onkyo audio equipment via an RI port based on Arduino Uno (ATMega328P).
+# seri - SErial to Remote Interactive interface to control Onkyo audio equipment via an RI port based on Arduino Uno (ATmega328P).
 
-#### To use interface connect Arduino serial port to computer then send commands via serial port (8n1 57600).
+#### To use the interface, connect Arduino NANO usb port to computer and pins D5/GND to RI port, then send commands through serial port (8n1 57600).
 
-#### commands:
+Commands:
+
 - xnnn - send RI code (e.g. x004, x08d)
 - i - send incremened code (e.g. send x003, i, i, i is equal to send x003, x004, x005, x006)
 - r - repeat code (e.g. send x003, r, r, r is equal to send x003, x003, x003, x003)
@@ -47,11 +48,11 @@ One RI code lasts from 49ms (x000) to 61ms (xfff), safe minimum time between com
 - x1a5 - Mute off (sound on)
 - x1ae - Power off
 - x1af - Power on
-- x2b0 - Displey dim max
-- x2b1 - Displey dim mid
-- x2b2 - Displey dim min
-- x2b8 - Displey dim max
-- x2bf - Displey dim min
+- x2b0 - Display dim max
+- x2b1 - Display dim mid
+- x2b2 - Display dim min
+- x2b8 - Display dim day
+- x2bf - Display dim night
 - x420 - Service mode off
 - x421 - Service mode 1-00
 - x422 - Service mode 2-00
