@@ -34,6 +34,13 @@ int16_t main(void)
 	UCSR0C |= (1 << UCSZ01) | (1 << UCSZ00); // 8n1
 	UCSR0B |= (1 << TXEN0) | (1 << RXEN0);	 // TX AND RX ENABLE
 
+#ifdef _GI_
+
+	// CHANGE GI PIN AS OUTPUT
+	DDRD |= IC_GI_O;
+
+#endif
+
 	// VARIABLES
 	uint16_t code = 0;
 	uint8_t i = 0, j = 0;
