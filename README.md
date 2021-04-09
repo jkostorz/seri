@@ -1,6 +1,6 @@
 # seri - SErial to Remote Interactive interface to control Onkyo audio equipment via an RI port based on Arduino Uno (ATmega328P).
 
-#### To use the interface, connect Arduino NANO usb port to computer and pins D5/GND to RI port, then send commands through serial port (8n1 57600).
+#### To use the interface, connect Arduino NANO usb port to computer and pins D2/GND to RI port, then send commands through serial port (8n1 57600).
 
 Commands:
 
@@ -12,7 +12,7 @@ Commands:
 
 All commands are case insensitive.
 
-One RI code lasts from 49ms (x000) to 61ms (xfff), safe minimum time between commands is 65ms. If a galvanic isolation system is used, add another 40ms for relay delays.
+One RI code lasts from 35ms (x000) to 47ms (xfff), safe minimum time between commands is 50ms. If a galvanic isolation system is used, add another 40ms for relay delays.
 
 #### Codes for A-9150
 - x002 - Volume up
@@ -36,6 +36,56 @@ One RI code lasts from 49ms (x000) to 61ms (xfff), safe minimum time between com
 - x422 - Service mode - audio tests
 - x423 - Service mode
 - x424 - Service mode
+
+#### Codes from A-9150
+- x0ea - Power Off from remote or front panel (allways)
+- x0ef - Amplifier ready
+- x1b0, x1b1, x1b2 - Power On from remote control or front panel and Dimmer from remote control (allways)
+
+- When D1 input is selected... (CD)
+- xf0a - Display
+- xf40 - Up
+- xf41 - Down
+- xf42 - Right
+- xf43 - Left
+- xf8d - Enter
+- xf92 - Return
+- xfcf - Menu
+
+- When D2 input is selected...
+- xc00 - Forward
+- xc01 - Previous
+- xc06 - Input
+- xc07 - Display
+- xc4d - Enter
+- xc82 - Up (repeat three times)
+- xc83 - Down (repeat three times)
+- xc84 - Left (repeat three times)
+- xc85 - Right (repeat three times)
+- xc93 - Menu
+- xc95 - Return
+- xcd0 - Play
+- xcd8 - Repeat
+- xcd9 - Shuffle
+
+- When D3 input is selected...
+- x595 - Return
+- x59d - Input
+- x5c2 - Up (repeat three times)
+- x5c3 - Down (repeat three times)
+- x5c8 - Next
+- x5c9 - Previous
+- x5cb - Play
+- x5d2 - Shuffle
+- x5d3 - Repeat
+- x5d5 - Display
+- x5d6 - Menu
+- x5d7 - Enter
+
+- When exit from selected input
+- x521 - D3 stop
+- xc21 - D2 stop
+- xf21 - D1 stop
 
 #### Codes for TX-SR304E
 - x020 - Input CD

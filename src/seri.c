@@ -282,7 +282,7 @@ void func_ri_send(uint16_t data)
 	IC_RI_Hi;
 	wait_ms(RI_PULSE_TIME);
 	IC_RI_Lo;
-	wait_ms(RI_PULSE_TIME * 20);
+	wait_ms(RI_PULSE_TIME * 6);
 }
 
 // DELAY FUNCTIONS
