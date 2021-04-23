@@ -1,6 +1,6 @@
-# seri - SErial to Remote Interactive interface to control Onkyo audio equipment via an RI port based on Arduino Uno (ATmega328P).
+# seri - SErial to Remote Interactive interface for controlling Onkyo audio equipment via RI port (interface is based on the Arduino Uno board with ATmega328P)
 
-#### To use the interface, connect Arduino NANO usb port to computer and pins D2/GND to RI port, then send commands through serial port (8n1 57600).
+## To use the interface, connect Arduino NANO usb port to computer and pins D2/GND to RI port, then send commands through serial port (8n1 57600)
 
 Commands:
 
@@ -12,9 +12,10 @@ Commands:
 
 All commands are case insensitive.
 
-One RI code lasts from 35ms (x000) to 47ms (xfff), safe minimum time between commands is 50ms. If a galvanic isolation system is used, add another 40ms for relay delays.
+One RI code lasts from 35ms (x000) to 47ms (xfff), safe minimum time between commands is 50ms. If a galvanic isolation system is used, add another 40ms for relay switching delay.
 
-#### Codes for A-9150
+### Codes for A-9150
+
 - x002 - Volume up
 - x003 - Volume down
 - x004 - Power toggle
@@ -37,12 +38,14 @@ One RI code lasts from 35ms (x000) to 47ms (xfff), safe minimum time between com
 - x423 - Service mode
 - x424 - Service mode
 
-#### Codes from A-9150
+### Codes from A-9150
+
 - x0ea - Power Off from remote or front panel (allways)
 - x0ef - Amplifier ready
 - x1b0, x1b1, x1b2 - Power On from remote control or front panel and Dimmer from remote control (allways)
 
-- When D1 input is selected... (CD)
+#### &nbsp;&nbsp;&nbsp;&nbsp;When D1 input is selected...&nbsp;
+
 - xf0a - Display
 - xf40 - Up
 - xf41 - Down
@@ -52,7 +55,8 @@ One RI code lasts from 35ms (x000) to 47ms (xfff), safe minimum time between com
 - xf92 - Return
 - xfcf - Menu
 
-- When D2 input is selected...
+#### &nbsp;&nbsp;&nbsp;&nbsp;When D2 input is selected...&nbsp;
+
 - xc00 - Forward
 - xc01 - Previous
 - xc06 - Input
@@ -68,7 +72,8 @@ One RI code lasts from 35ms (x000) to 47ms (xfff), safe minimum time between com
 - xcd8 - Repeat
 - xcd9 - Shuffle
 
-- When D3 input is selected...
+#### &nbsp;&nbsp;&nbsp;&nbsp;When D3 input is selected...&nbsp;
+
 - x595 - Return
 - x59d - Input
 - x5c2 - Up (repeat three times)
@@ -82,12 +87,14 @@ One RI code lasts from 35ms (x000) to 47ms (xfff), safe minimum time between com
 - x5d6 - Menu
 - x5d7 - Enter
 
-- When exit from selected input
+#### &nbsp;&nbsp;&nbsp;&nbsp;When exit from selected input...&nbsp;
+
 - x521 - D3 stop
 - xc21 - D2 stop
 - xf21 - D1 stop
 
-#### Codes for TX-SR304E
+### Codes for TX-SR304E
+
 - x020 - Input CD
 - x120 - Input DVD
 - x170 - Input HDD
